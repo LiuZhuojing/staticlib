@@ -18,16 +18,16 @@ int main(){
 	if(choice==0){
 		exit(0);
 	}else if(choice==1){
-		fd=open(pathname, O_CREAT, S_IRWXU);
+		fd=fopen(pathname, O_CREAT, S_IRWXU);
 		close(fd);
 	}else if(choice==2){
-		fd=open(pathname,  O_WRONLY|O_CREAT);
-		write(fd, s, sizeof(s));
-		close(fd);	
+		fd=fopen(pathname,  O_WRONLY|O_CREAT);
+		fwrite(fd, s, sizeof(s));
+		fclose(fd);	
 	}else if(choice==3){
-		fd=open(pathname, O_RDONLY);
-		size=read(fd, buffer, sizeof(buffer));
-		close(fd);
+		fd=fopen(pathname, O_RDONLY);
+		size=fread(fd, buffer, sizeof(buffer));
+		fclose(fd);
 		
 		printf("%s\n", buffer);
 	}else if(choice==4){
