@@ -7,14 +7,14 @@
 
 int main(){
 	int choice = 0;
-	int fd, size;
+	int fd, size, i;
 	const char *pathname = "choice1.txt";
 	char s[] = "test for week7", buffer[80]; 
 	struct stat fileInfo;
 	unsigned int mask, access;
 	printf("Please input your choice(0:6)0:");
 	scanf("%d", &choice);
-	printf("%d", choice);
+	
 	if(choice==0){
 		exit(0);
 	}else if(choice==1){
@@ -28,6 +28,7 @@ int main(){
 		fd=open(pathname, O_RDONLY);
 		size=read(fd, buffer, sizeof(buffer));
 		close(fd);
+		
 		printf("%s\n", buffer);
 	}else if(choice==4){
 		chmod(pathname, 0644);
