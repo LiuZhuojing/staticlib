@@ -1,0 +1,1 @@
+文件call.c获得了进程id及父进程id，并在调用可执行文件test3。文件call2.c和call3.c获得了进程Id及父进程id，同时调用了可执行文件test5。
